@@ -1,0 +1,48 @@
+/*
+ * FlaarlibSimpleRun.cpp
+ *
+ *  Created on: 04.11.2015
+ *      Author: dehnhardt
+ */
+
+#include "FlaarlibSimpleRun.h"
+#include "Flaarlib.h"
+#include "FLModule.h"
+#include "logger/Logger.h"
+#include "spdlog/spdlog.h"
+
+FlaarlibSimpleRun::FlaarlibSimpleRun() {
+
+    try
+    {
+        spdlog::set_async_mode(1048576); //queue size must be power of 2
+//        auto file_logger = spdlog::rotating_logger_mt("file_logger", "flaarlib", 1024 * 1024 * 5, 3);
+        std::vector<spdlog::sink_ptr> sinks;
+        sinks.push_back(std::make_shared<spdlog::sinks::stdout_sink_st>());
+        sinks.push_back(std::make_shared<spdlog::sinks::simple_file_sink_st>("/tmp/FlaarLib", true));
+        auto logger = std::make_shared<spdlog::logger>("Flaarlib", begin(sinks), end(sinks));
+        spdlog::register_logger(logger);
+        //logger->info("Hello ") << " world";
+        //flaarlib::Log::registerLogger(logger);
+    }
+    catch (const spdlog::spdlog_ex& ex)
+    {
+        std::cout << "Log failed: " << ex.what() << std::endl;
+    }
+
+
+	flaarlib = new flaarlib::Flaarlib();
+	new flaarlib::FLModule("Test1");
+}
+
+FlaarlibSimpleRun::~FlaarlibSimpleRun() {
+	// TODO Auto-generated destructor stub
+}
+
+using namespace flaarlib;
+
+int main() {
+	new FlaarlibSimpleRun();
+	return 0;
+}
+
