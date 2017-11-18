@@ -3,7 +3,6 @@
 	<name>FlaarlibSimpleRun</name>
 	<comment></comment>
 	<projects>
-		<project>Flaarlib</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>

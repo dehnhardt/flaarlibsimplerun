@@ -9,7 +9,10 @@ src/FlaarlibSimpleRun.o: ../src/FlaarlibSimpleRun.cpp \
  /home/dehnhardt/develop/Flaarlib/src/modules/InputModule.h \
  /home/dehnhardt/develop/Flaarlib/src/modules/../FLModule.h \
  /home/dehnhardt/develop/Flaarlib/src/modules/../Flaarlib.h \
- /home/dehnhardt/develop/Flaarlib/src/modules/../FLPort.h
+ /home/dehnhardt/develop/Flaarlib/src/modules/../FLPort.h \
+ /home/dehnhardt/develop/Flaarlib/src/modules/ThroughModule.h \
+ /home/dehnhardt/develop/Flaarlib/src/modules/OutputModule.h \
+ /home/dehnhardt/develop/Flaarlib/src/exceptions/Exceptions.h
 
 ../src/FlaarlibSimpleRun.h:
 
@@ -32,3 +35,9 @@ src/FlaarlibSimpleRun.o: ../src/FlaarlibSimpleRun.cpp \
 /home/dehnhardt/develop/Flaarlib/src/modules/../Flaarlib.h:
 
 /home/dehnhardt/develop/Flaarlib/src/modules/../FLPort.h:
+
+/home/dehnhardt/develop/Flaarlib/src/modules/ThroughModule.h:
+
+/home/dehnhardt/develop/Flaarlib/src/modules/OutputModule.h:
+
+/home/dehnhardt/develop/Flaarlib/src/exceptions/Exceptions.h:

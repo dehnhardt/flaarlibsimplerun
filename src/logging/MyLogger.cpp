@@ -23,8 +23,8 @@ MyLogger::MyLogger(){
         sinks.push_back(std::make_shared<spdlog::sinks::stdout_sink_st>());
         sinks.push_back(std::make_shared<spdlog::sinks::simple_file_sink_st>("/tmp/FlaarLib", true));
         auto logger = std::make_shared<spdlog::logger>("Flaarlib", begin(sinks), end(sinks));
+		spdlog::register_logger(logger);
         spdlog::set_level(spdlog::level::debug);
-        spdlog::register_logger(logger);
     }
     catch (const spdlog::spdlog_ex& ex)
     {
